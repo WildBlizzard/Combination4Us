@@ -15,6 +15,9 @@ I am the founder of this software, If you have any questions, please email me, M
 
 使用方式
 
+--- I recommend you to operate in Linux environment.
+--- 我推荐您在Linux环境下进行相关操作。
+
 api_zhi.py: 第四范式AutoOCR的衍生品，具有一键批量请求，自动寻址产出的功能。
 
  -- 使用前：
@@ -67,5 +70,5 @@ rmRedSeal_zhi.py：图像红章移除。
 如有改动请先单开分支自我处理，有问题可发送邮件或提交 issue ，谢谢。
 
 
-2021.1.25 北京
+2021.2.1 北京
 ZhiQiang
