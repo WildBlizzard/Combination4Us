@@ -13,7 +13,6 @@ from tools.completeOther import complete_it
 from tools.getFullPath import through_full_path
 from tools.cutListUWant import customize_cut_list
 from tools.originFileName import get_the_filename
-from concurrent.futures import ThreadPoolExecutor
 
 
 class Api:

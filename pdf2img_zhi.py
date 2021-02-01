@@ -34,7 +34,7 @@ class Pdf2Img:
     def full_way(self, fpdf, ftrans, forigin_name):
         """全量及原文件名输出"""
         full_output = complete_it(self.open_file_path, self.save_file_path,
-                                  self.index_num, forigin_name + self.folder_symbol)
+                                  self.index_num, forigin_name + self.folder_symbol, self.folder_symbol)
         for i in range(fpdf.pageCount):
             pm = fpdf[i].getPixmap(matrix=ftrans, alpha=False)
             pm.writePNG(full_output[0] + self.folder_symbol + '%s.png' % (forigin_name  + '-' + str(i + 1)))
@@ -43,7 +43,7 @@ class Pdf2Img:
     def random_way(self, rpdf, rtrans, rrandom_sign):
         """全量及随机文件名输出"""
         random_output = complete_it(self.open_file_path, self.save_file_path,
-                                    self.index_num, rrandom_sign + self.folder_symbol)
+                                    self.index_num, rrandom_sign + self.folder_symbol, self.folder_symbol)
         for i in range(rpdf.pageCount):
             pm = rpdf[i].getPixmap(matrix=rtrans, alpha=False)
             random_name = rrandom_sign + '-' + str(i + 1)
@@ -52,7 +52,7 @@ class Pdf2Img:
 
     def first_page_way(self, fppdf, fptrans, fporigin_name):
         """仅首页及原文件名输出"""
-        final_output = complete_it(self.open_file_path, self.save_file_path, self.index_num)
+        final_output = complete_it(self.open_file_path, self.save_file_path, self.index_num, symbol=self.folder_symbol)
         pm = fppdf[0].getPixmap(matrix=fptrans, alpha=False)
         pm.writePNG(final_output[0] + self.folder_symbol + '%s.png' % fporigin_name )
 

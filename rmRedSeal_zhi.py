@@ -12,25 +12,27 @@ from tools.originFileName import get_the_filename
 class RmRedSeal:
 
 
-    def __init__(self, image_data, save_to, index, thresh=160):
+    def __init__(self, image_data, save_to, index, thresh=160, plat_symbol='/'):
         """
         image_data: 完整输入路径
         save_to: 输出路径
         index: 输入路径长度
+        plat_symbol: 当前系统文件夹分隔符，默认Linux
         thresh: 脱粒值
         """
         self.image_data = image_data
         self.save_to = save_to
         self.index = index
         self.thresh = thresh
+        self.plat_symbol = plat_symbol
         origin_data = cv2.imread(self.image_data)
         self.blue, self.green, self.red = cv2.split(origin_data)
 
 
     def save_method(self, after_img):
         """输出逻辑"""
-        out_where = complete_it(self.image_data, self.save_to, self.index)
-        file_name = get_the_filename(self.image_data, self.index, 'jpg')
+        out_where = complete_it(self.image_data, self.save_to, self.index, symbol=self.plat_symbol)
+        file_name = get_the_filename(self.image_data, self.index, 'jpg', self.plat_symbol)
         cv2.imwrite(out_where[0] + file_name, after_img)
 
 
@@ -45,7 +47,7 @@ class RmRedSeal:
 if __name__ == "__main__":
     # 输入路径 输出路径 脱粒值
     # 脱粒值应根据实际需求做出更改
-    input_way, save_way, thresh_way = sys.argv[1], sys.argv[2], sys.argv[3]
+    input_way, save_way, thresh_way, symb = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
     for img_data in (img for img in through_full_path(input_way)):
-        RmRedSeal(img_data, save_way, len(input_way), int(thresh_way)).main_process()
+        RmRedSeal(img_data, save_way, len(input_way), int(thresh_way), symb).main_process()
     print('Process done')

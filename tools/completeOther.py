@@ -13,16 +13,17 @@ def make_dirs(input_path):
     if not os.path.exists(input_path): os.makedirs(input_path)
 
 
-def complete_it(open_file_path, save_file_path, index_num, addition=''):
+def complete_it(open_file_path, save_file_path, index_num, addition='', symbol='/'):
     """
     创建并补全剩余路径
     open_file_path: 完整输入路径子路径及文件
     save_file_path: 初始输出路径
     index_num: 初始输入路径长度定位值
     addition: 额外增补路径，默认空
+    symbol: 当前运行系统文件夹分隔符，Windows或Linux，默认Linux
     return: 完整输出路径0，子文件夹路径1
     """
-    end_path = (os.path.split(open_file_path)[0][index_num:]) + '/'
+    end_path = (os.path.split(open_file_path)[0][index_num:]) + symbol
     final_output = save_file_path + end_path + addition
     make_dirs(final_output)
     return final_output, end_path
