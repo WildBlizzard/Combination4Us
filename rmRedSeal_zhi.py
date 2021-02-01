@@ -17,8 +17,8 @@ class RmRedSeal:
         image_data: 完整输入路径
         save_to: 输出路径
         index: 输入路径长度
-        plat_symbol: 当前系统文件夹分隔符，默认Linux
         thresh: 脱粒值
+        plat_symbol: 当前系统文件夹分隔符，默认Linux
         """
         self.image_data = image_data
         self.save_to = save_to

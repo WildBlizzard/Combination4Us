@@ -16,7 +16,7 @@ def through_full_path(origin_path):
 
 def get_order_list(input_list, symbol='/'):
     """
-    获取一个有序的路径列表
+    获取一个有序的路径列表，文件名需类似此形态：'xxx-1.xxx'
     input_list: 输入路径（无序）
     symbol: 当前运行系统文件夹分隔符，Windows或Linux，默认Linux
     return: 有序路径
