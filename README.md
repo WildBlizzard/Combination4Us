@@ -62,8 +62,8 @@ rmRedSeal_zhi.py：图像红章移除。
     Python同上，opencv-contrib-python 的版本应不低于 4.4.0.46。
 
  -- 基础用法：
-    python3(python) rmRedSeal_zhi.py xxx xxx xxx
-    # 第一处为输入路径，依次为输出路径及图像脱粒值，默认160。
+    python3(python) rmRedSeal_zhi.py xxx xxx xxx xxx
+    # 第一处为输入路径，依次为输出路径及图像脱粒值，默认160，最后一处输入 "/" 或 "\\"以区分Linux或Windows环境。
 
 
 欢迎诸位为其增砖添瓦，代码风格请尽量符合面向对象原则，
