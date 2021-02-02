@@ -104,7 +104,8 @@ if __name__ == '__main__':
         def main_process(input_da):
             for img_data in input_da:
                 Api(img_data, args.save_folder, local_server,
-                            main_sce, sub_sce, len(args.input_folder), args.out_type, vers=ver).final_produce()
+                    main_sce, sub_sce, len(args.input_folder),
+                    args.out_type, vers=ver).final_produce()
         # 多线程环节
         threads = [Thread(target=main_process, args=[block]) for block in new_data_li]
         for thd in threads: thd.start()
@@ -112,8 +113,9 @@ if __name__ == '__main__':
     elif args.different_way == 'single':
         origin_count = 1
         for img_data in (item for item in through_full_path(args.input_folder)):
-            Api(img_data, args.save_folder, local_server, main_sce, sub_sce, len(args.input_folder),
-                        args.out_type, origin_count, vers=ver).final_produce()
+            Api(img_data, args.save_folder, local_server,
+                main_sce, sub_sce, len(args.input_folder),
+                args.out_type, origin_count, vers=ver).final_produce()
             origin_count += 1
 
     stop = time.perf_counter() - start
