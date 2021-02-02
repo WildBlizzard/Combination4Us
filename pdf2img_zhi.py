@@ -60,7 +60,7 @@ class Pdf2Img:
     @calculate_time
     def main_process(self):
         """主转化逻辑"""
-        if self.open_file_path.split(self.folder_symbol)[-1].split('.')[1] != 'pdf': return
+        if self.open_file_path.split(self.folder_symbol)[-1][-3:] != 'pdf': return
         # zoom_x, zoom_y --> 图像质量
         rotate, zoom_x, zoom_y = int(0), 2.33, 2.33
         # pdf关键参数
@@ -89,7 +89,8 @@ if __name__ == '__main__':
     start = time.perf_counter()
 
     for pdf_path in (item for item in through_full_path(args.input_folder)):
-        Pdf2Img(pdf_path, args.save_folder, len(args.input_folder), args.platform, args.crossroad).main_process()
+        Pdf2Img(pdf_path, args.save_folder, len(args.input_folder),
+                args.platform, args.crossroad).main_process()
 
     stop = time.perf_counter() - start
     final_show = electronic_clock(stop)
