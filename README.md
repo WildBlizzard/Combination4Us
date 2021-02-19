@@ -6,7 +6,7 @@ This software serves all the software implementation engineers, and takes produc
 
 本软件服务于诸位软件实施工程师，以第四范式的产品为核心进而延伸出的种种方便法，欢迎诸位有能力者参与，添加并改进其性能，使之易用、高效。
 
-I am the founder of this software, If you have any questions, please email me, My email address is zhzq64@163.com.
+If you have any questions, please email me, My email address is zhzq64@163.com.
 
 如有任何疑问，欢迎发送邮件向我咨询，我的个人邮箱：zhzq64@163.com。
 
